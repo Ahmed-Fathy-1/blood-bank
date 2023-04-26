@@ -75,7 +75,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'api' => [
+        // 'api' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Client::class,
+        // ],
+        'clients' => [
             'driver' => 'eloquent',
             'model' => App\Client::class,
         ],

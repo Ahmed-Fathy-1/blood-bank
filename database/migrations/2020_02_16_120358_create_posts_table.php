@@ -8,7 +8,7 @@ class CreatePostsTable extends Migration {
 	public function up()
 	{
 		Schema::create('posts', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id();
 			$table->timestamps();
 			$table->string('title', 50);
 			$table->string('image', 100);

@@ -43,8 +43,9 @@ class MainController extends Controller
     public function post($id)
     {
       $post = Post::findOrFail($id);
-      $posts = Post::where('$this->category_id','$post->category_id')->get();
-      dd($posts);
+      $posts = Post::whereHas('category', function($q) use($post) {
+        $q->where('id', $post->category_id);
+      })->get();
       return view('front.post',compact('post','posts'));
 
     }
